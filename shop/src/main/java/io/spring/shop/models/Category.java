@@ -1,6 +1,6 @@
 package io.spring.shop.models;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,8 +27,8 @@ public class Category {
     private String imageURL;
 
     @Column(name = "is_active")
-    @Value("${props.boolean.isFPL:#{false}}")
-    private Boolean isActive;
+    @JsonIgnore
+    private Boolean isActive = true;
 
     public Long getId() {
         return id;
