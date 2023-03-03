@@ -2,6 +2,9 @@ package io.spring.shop.exception;
 
 import org.springframework.http.HttpStatus;
 
+import lombok.Getter;
+
+@Getter
 public class ThrowableException extends RuntimeException {
 
     private HttpStatus statusCode;
@@ -20,14 +23,6 @@ public class ThrowableException extends RuntimeException {
     public ThrowableException(HttpStatus statusCode, String message) {
         this.statusCode = statusCode;
         this.message = message;
-    }
-
-    public HttpStatus getStatusCode() {
-        return statusCode;
-    }
-
-    public String getMessage() {
-        return message;
     }
 
 }
